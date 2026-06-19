@@ -236,6 +236,22 @@
     position: relative; overflow: hidden;
     transition: border-color .2s, transform .2s;
     cursor: default;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  a.project-card {
+    cursor: pointer;
+  }
+  a.project-card .project-title::after {
+    content: ' ↗';
+    font-size: .7rem;
+    color: var(--cyan);
+    opacity: 0;
+    transition: opacity .2s;
+  }
+  a.project-card:hover .project-title::after {
+    opacity: 1;
   }
   .project-card:hover {
     border-color: rgba(0,245,212,.35);
@@ -376,6 +392,9 @@
   /* ── ANIMATED ENTRY ── */
   .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+
+
 </style>
 </head>
 <body>
@@ -469,7 +488,11 @@
 
   <div class="projects-grid">
 
-    <div class="project-card fade-in">
+    
+
+    <a href="https://medium.com/@ratnaparkhisatej/installing-openwrt-on-the-tp-link-tl-mr3420-a-complete-step-by-step-guide-d96f67165e78" 
+      target="_blank"
+      class="project-card fade-in">
       <div class="project-num">[ PROJECT_01 ]</div>
       <div class="project-title">Router Firmware Backdoor</div>
       <div class="project-desc">Flashed open source router firmware to implant a persistent shell backdoor. Demonstrated persistent access methodology on embedded Linux hardware.</div>
@@ -480,9 +503,12 @@
         <span class="tag">Bash</span>
         <span class="tag">UART</span>
       </div>
-    </div>
-
-    <div class="project-card fade-in">
+    </a>
+    
+    <a href="https://medium.com/@ratnaparkhisatej/exploiting-an-amazon-fire-tv-stick-with-adb-a-practical-walkthrough-fb6a0cd0e43b"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="project-card fade-in">
       <div class="project-num">[ PROJECT_02 ]</div>
       <div class="project-title">Fire TV Stick & Android Exploitation</div>
       <div class="project-desc">Ethically exploited a Fire TV Stick and Android device to gain unauthorized access, demonstrating ADB misconfigurations and sideloading attack vectors on consumer hardware.</div>
@@ -492,9 +518,9 @@
         <span class="tag tag-warn">IoT</span>
         <span class="tag">Privilege Esc</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project-card fade-in">
+    <a href="#" class="project-card fade-in">
       <div class="project-num">[ PROJECT_03 ]</div>
       <div class="project-title">Virtual Network over Cloud</div>
       <div class="project-desc">Designed and deployed a virtual overlay network on cloud infrastructure enabling secure remote access. Used tunneling and VPN protocols to simulate enterprise network architecture.</div>
@@ -504,9 +530,9 @@
         <span class="tag">Networking</span>
         <span class="tag">WireGuard</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project-card fade-in">
+    <a href="#" class="project-card fade-in">
       <div class="project-num">[ PROJECT_04 ]</div>
       <div class="project-title">Secure Cloud Storage</div>
       <div class="project-desc">Developed a cloud storage solution built around secure coding principles — end-to-end encryption, input validation, least-privilege IAM roles, and audit logging from the ground up.</div>
@@ -516,9 +542,9 @@
         <span class="tag">Secure Coding</span>
         <span class="tag">Cloud</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project-card fade-in">
+    <a href="#" class="project-card fade-in">
       <div class="project-num">[ PROJECT_05 ]</div>
       <div class="project-title">Home Lab — OpenWRT Firewall Network</div>
       <div class="project-desc">Designed and built a physical home lab network with OpenWRT as the core firewall/router. Configured VLANs, custom firewall rules, traffic monitoring, and IDS for real-world network practice.</div>
@@ -529,9 +555,9 @@
         <span class="tag">Firewall</span>
         <span class="tag">HomeLab</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project-card fade-in">
+    <a href="#" class="project-card fade-in">
       <div class="project-num">[ PROJECT_06 ]</div>
       <div class="project-title">Basic DevOps Pipeline</div>
       <div class="project-desc">Set up a foundational CI/CD pipeline with automated testing, containerized builds, and deployment stages — integrating security scanning steps into the pipeline flow.</div>
@@ -541,9 +567,9 @@
         <span class="tag">DevSecOps</span>
         <span class="tag">Linux</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project-card fade-in">
+    <a href="#" class="project-card fade-in">
       <div class="project-num">[ PROJECT_07 ]</div>
       <div class="project-title">Developed Boot 2 Root Machines for CTFs</div>
       <div class="project-desc">Developed OVA format machines for boot 2 root type of challenges in CTF, Combining web and network exploitation techniques and deployed instances on TryHackMe.</div>
@@ -554,9 +580,9 @@
         <span class="tag">PWN</span>
         <span class="tag">Exploitation</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project-card fade-in">
+    <a href="#" class="project-card fade-in">
       <div class="project-num">[ PROJECT_08 ]</div>
       <div class="project-title">AI Driven Linux OS for Security Hardening & DevSecOps</div>
       <div class="project-desc">Developed a python based tool to query Local LLM model, By automating security related tasks, Handled client-server traffic using controlled architecture.</div>
@@ -566,7 +592,7 @@
         <span class="tag tag-cool">DevSecOps</span>
         <span class="tag">AI</span>
       </div>
-    </div>
+    </a>
 
   </div>
 </section>
